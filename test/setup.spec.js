@@ -1,11 +1,8 @@
-var blah = require("../src/DateGenerator.js");
-
-
 var assert = require('assert');
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        it('should do something', function() {
-            assert.equal(-1, blah.doSomething());
-        });
+var dateGenerator = require("../src/DateGenerator.js");
+
+describe('DateGenerator', function() {
+    it('should start on the 1st day of the year', function() {
+        assert.equaldateGenerator.doSomething(), -1);
     });
 });
