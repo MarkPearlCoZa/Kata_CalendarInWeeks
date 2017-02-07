@@ -4,14 +4,15 @@ module.exports = class Person {
 
     constructor(year = 2016) {
        this._year = year.toString();
-       this._startOfYear = moment(this._year + "-01-01") .clone().day(1);
+       this._firstDayOfYear = moment(this._year + "-01-01");
+       this._startMondayOfYear = this._firstDayOfYear.clone().day("Monday");
     }
 
     startOfYear() {
-        return this._startOfYear.clone().date();
+        return this._startMondayOfYear.clone();
     }
 
-    weekOf(int weekNum) {
-        
+    weekOf(weekNum) {
+       return this._startMondayOfYear.clone().week(weekNum);
     }
 }
