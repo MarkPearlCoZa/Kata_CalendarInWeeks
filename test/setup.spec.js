@@ -2,15 +2,19 @@ var assert = require('assert');
 var expect = require('chai').expect
 var dateGenerator = require("../src/DateGenerator.js");
 
-describe('In 2016', function() {
-    it('the first Monday of the first week of 2016 is the 28th of Dec 2015', function() {
-        expect(dateGenerator.startOfYear()).to.equal(28);
-    });
-});
+describe('Given a Date Generator', function() {
+    var generator = new dateGenerator();
 
-describe('In 2015', function() {
-    it('the first Monday of the first week of 2015 is the 28th of Dec 2015', function() {
-        expect(dateGenerator.startOfYear()).to.equal(28);
+    describe('In 2016', function() {
+        it('the first Monday of the first week of 2016 is the 28th of Dec 2015', function() {
+            expect(generator.startOfYear()).to.equal(28);
+        });
+    });
+
+    describe('In 2015', function() {
+        it('the first Monday of the first week of 2015 is the 28th of Dec 2015', function() {
+            expect(generator.startOfYear()).to.equal(28);
+        });
     });
 });
 
