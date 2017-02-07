@@ -1,19 +1,13 @@
 var moment = require('moment');
 
-/*
-module.exports = {
-    
-
-    startOfYear: function() {
-        let start = moment("2016-01-01") .clone().day(1);
-        return start.date();
-    }
-}
-*/
-
 module.exports = class Person {
-    
+
+    constructor(year = 2016) {
+       this._year = year.toString();
+    }
+
     startOfYear() {
-        return -1;
+        let start = moment(this._year + "-01-01") .clone().day(1);
+        return start.date();
     }
 }
