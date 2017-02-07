@@ -1,1 +1,1 @@
-let dateGenerator = require('./DateGenerator.js');
+let dateGenerator = require('./FirstDayOfWeekGenerator.js');

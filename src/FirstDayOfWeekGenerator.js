@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-module.exports = class Person {
+module.exports = class firstDayOfWeekGenerator {
 
     constructor(year = 2016) {
        this._year = year.toString();

@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha -u tdd --reporter spec"
+    "test": "find ./src -iregex '.*.test.js' | xargs mocha -u tdd --reporter spec"
   },
   "repository": {
     "type": "git",

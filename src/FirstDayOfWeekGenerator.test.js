@@ -2,7 +2,7 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var moment = require('moment');
 
-var dateGenerator = require("../src/DateGenerator.js");
+var dateGenerator = require("../src/FirstDayOfWeekGenerator.js");
 
 describe('In 2016', function() {
     let generator = new dateGenerator(2016);
