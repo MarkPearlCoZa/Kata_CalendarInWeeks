@@ -1,4 +1,4 @@
-var moment = require('moment');
+let moment = require('moment');
 
 module.exports = class firstDayOfWeekGenerator {
 
@@ -13,6 +13,6 @@ module.exports = class firstDayOfWeekGenerator {
     }
 
     weekOf(weekNum) {
-       return this._startMondayOfYear.clone().week(weekNum);
+       return this._startMondayOfYear.clone().week(weekNum+1);
     }
 }

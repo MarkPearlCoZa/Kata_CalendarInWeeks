@@ -1,17 +1,17 @@
-var expect = require('chai').expect;
-var moment = require('moment');
+let expect = require('chai').expect;
+let moment = require('moment');
 
-var dateGenerator = require("../src/FirstDayOfWeekGenerator.js");
+let dateGenerator = require("../src/FirstDayOfWeekGenerator.js");
 
 describe('In 2016', function() {
     let generator = new dateGenerator(2016);
 
     it('the first Monday of the first week of 2016 is the 28th of Dec 2015', function() {
-        expect(generator.startOfYear().isSame(moment("2015-12-28"))).to.be.true;
+        expect(generator.weekOf(0).format("DD MMM YYYY")).to.equal("28 Dec 2015");
     });
 
     it('the Monday of the second week of 2016 is the 4th of Jan 2016', function() {
-        expect(generator.weekOf(2).isSame(moment("2016-01-04"))).to.be.true;
+        expect(generator.weekOf(1).format("DD MMM YYYY")).to.equal("04 Jan 2016");
     });
 });
 
