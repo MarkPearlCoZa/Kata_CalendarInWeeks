@@ -9,9 +9,9 @@ module.exports = class calendarInWeeksGenerator {
 
         do {
             result.push(generator.weekOf(weekCount));
+            let nextWeek = generator.weekOf(weekCount);
             weekCount++;
-            let nextWeek = 
-        } while ();
+        } while (weekCount < 10);
 
         return result;
     }    
