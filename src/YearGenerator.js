@@ -1,17 +1,21 @@
-var dateGenerator = require("../src/FirstDayOfWeekGenerator.js");
+let firstDayOfWeekGenerator = require('../src/FirstDayOfWeekGenerator.js');
+let moment = require('moment');
 
 module.exports = class calendarInWeeksGenerator {
 
-    getPeriodsOfYear() {
-        let result = [];
-        let generator = new dateGenerator(2016);
+    getPeriodsOfYearFor(year) {
+        let firstDayOfYear = new moment(year.toString() + "-01-01");
+        let lastDayOfYear = firstDayOfYear.clone().add(1, 'years').subtract(1,"days");
+        let generator = new firstDayOfWeekGenerator(year);
         let weekCount = 0;
+        let nextWeek = generator.weekOf(0);
+        let result = [];
 
         do {
-            result.push(generator.weekOf(weekCount));
-            let nextWeek = generator.weekOf(weekCount);
+            result.push(nextWeek);
             weekCount++;
-        } while (weekCount < 10);
+            nextWeek = generator.weekOf(weekCount);
+        } while (nextWeek.isBefore(lastDayOfYear));
 
         return result;
     }    

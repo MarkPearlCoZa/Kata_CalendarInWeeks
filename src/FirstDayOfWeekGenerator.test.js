@@ -18,7 +18,7 @@ describe('In 2016', function() {
 describe('In 2017', function() {
     let generator = new dateGenerator(2017);
     it('the first Monday of the first week of 2015 is the 28th of Dec 2015', function() {
-        expect(generator.startOfYear().isSame(moment("2017-01-02"))).to.be.true;
+        expect(generator.weekOf(0).format("DD MMM YYYY")).to.equal("02 Jan 2017");
     });
 });
 
