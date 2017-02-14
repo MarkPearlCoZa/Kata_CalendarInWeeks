@@ -1,7 +1,7 @@
 let dateGenerator = require('./YearGenerator.js');
 let generator = new dateGenerator();
 let weeks = generator.getPeriodsOfYearFor(2017);
-let teams = [ 'Galaga', 'Sirius', 'Bumblenauts']
+let teams = ['Sirius', 'Galaga' , 'Bumblenauts']
 
 weeks.map((date,index) => {
         let startOfWeek = date.format("DD MMM YYYY");
